@@ -540,28 +540,6 @@ Module.preRun = Module.preRun || [ ];
      * Context menu.
      **************************************************************************/
 
-    const menu = document.getElementById('ContextMenu');
-
-    const contextContainer = document.getElementById('ContextContainer');
-
-    document.getElementById('ContextButton').addEventListener('click', function (e) {
-        if (menu.style.display == 'none') {
-            menu.style.display = 'block';
-            contextContainer.classList.add("shown");
-        } else {
-            menu.style.display = 'none';
-            contextContainer.classList.remove("shown");
-        }
-        e.preventDefault();
-    });
-
-    menu.addEventListener('click', function (e) {
-        if (e.target.tagName == 'A') {
-            // Close context menu when a menu item is selected
-            menu.style.display = 'none';
-        }
-    });
-
     async function onSavegamesImport(input) {
         reader = new FileReader();
         reader.onload = function (e) {
